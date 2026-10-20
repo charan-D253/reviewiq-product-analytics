@@ -1,0 +1,34 @@
+REVIEWIQ — START FROM ZERO (NO VS CODE REQUIRED)
+
+1) Download ReviewIQ_Complete_Project.zip and choose Extract All.
+2) Open GitHub.com and create a NEW public repository, for example:
+   reviewiq-product-analytics-clean
+   Leave “Add a README” unchecked.
+3) Install GitHub Desktop from https://desktop.github.com/ and sign in.
+4) In GitHub Desktop: File > Clone repository > choose the new repository.
+5) In File Explorer, open the extracted ReviewIQ_Complete_Project folder.
+   Select its CONTENTS and copy them into the cloned repository folder.
+   Important: app.py, requirements.txt, static, and templates must be at the repository root.
+6) In GitHub Desktop: write a summary, click Commit to main, then Push origin.
+7) In Render: New > Web Service > Public Git Repository and enter the new public repo URL.
+8) Settings:
+   Language: Python 3
+   Branch: main
+   Root Directory: leave blank
+   Build Command: pip install -r requirements.txt
+   Start Command: gunicorn app:app --bind 0.0.0.0:$PORT
+9) Remove any blank Environment Variables row. The app needs no environment variables for same-origin use.
+10) Click Deploy Web Service. When Render says Live, open the provided https://...onrender.com link.
+11) In the website, click Upload dataset and select your actual CSV.
+
+EXPECTED GITHUB ROOT:
+app.py
+requirements.txt
+Procfile
+render.yaml
+.python-version
+static/app.js
+static/style.css
+templates/index.html
+
+Do NOT upload the ZIP as the only file. Keep the terminal open when running locally.
